@@ -41,7 +41,20 @@
 1. Прикрепите в файл README.md скриншот авторизации в админке.
 ![Скриншот-1](https://github.com/Morfey29/SMON-HOMEWORKS-ZABBIX1/blob/main/img/img1.png)
 2. Приложите в файл README.md текст использованных команд в GitHub.
-
+```
+wget https://repo.zabbix.com/zabbix/7.0/debian/pool/main/z/zabbix-release/zabbix-release_latest_7.0+debian12_all.deb
+dpkg -i zabbix-release_latest_7.0+debian12_all.deb
+apt update
+apt install zabbix-server-pgsql zabbix-frontend-php php8.2-pgsql zabbix-apache-conf zabbix-sql-scripts zabbix-agent2
+apt install zabbix-agent2-plugin-postgresql
+apt install postgresql
+sudo -u postgres createuser --pwprompt zabbix
+sudo -u postgres createdb -O zabbix zabbix
+zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psql zabbix
+sudo nano /etc/zabbix/zabbix_server.conf
+systemctl restart zabbix-server zabbix-agent2 apache2 postgresql
+systemctl enable zabbix-server zabbix-agent2 apache2 postgresql
+```
 ---
 
 ### Задание 2 
@@ -57,9 +70,18 @@
 
 #### Требования к результатам
 1. Приложите в файл README.md скриншот раздела Configuration > Hosts, где видно, что агенты подключены к серверу
+![Скриншот-2](https://github.com/Morfey29/SMON-HOMEWORKS-ZABBIX1/blob/main/img/img2.png)
 2. Приложите в файл README.md скриншот лога zabbix agent, где видно, что он работает с сервером
+![Скриншот-3](https://github.com/Morfey29/SMON-HOMEWORKS-ZABBIX1/blob/main/img/img3.png)
 3. Приложите в файл README.md скриншот раздела Monitoring > Latest data для обоих хостов, где видны поступающие от агентов данные.
+![Скриншот-4](https://github.com/Morfey29/SMON-HOMEWORKS-ZABBIX1/blob/main/img/img4.png)
 4. Приложите в файл README.md текст использованных команд в GitHub
+```
+sudo apt install zabbix-agent2
+sudo nano /etc/zabbix/zabbix_agent2.conf 
+systemctl start zabbix-agent2
+systemctl enable zabbix-agent2
+```
 
 ---
 ## Задание 3 со звёздочкой*
