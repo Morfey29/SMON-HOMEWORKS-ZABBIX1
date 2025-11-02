@@ -39,7 +39,7 @@
 
 #### Требования к результатам 
 1. Прикрепите в файл README.md скриншот авторизации в админке.
-![Скриншот-1](https://github.com/Morfey29/SMON-HOMEWORKS-ZABBIX1/img/img1.png)
+![Скриншот-1](https://github.com/Morfey29/SMON-HOMEWORKS-ZABBIX1/blob/main/img/img1.png)
 2. Приложите в файл README.md текст использованных команд в GitHub.
 
 ---
